@@ -9,11 +9,10 @@
     box-sizing: border-box;
 }
 body{
-    background: rgba(0, 0, 0, 0.4)url(images/15.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: darken;
+    background: #3C3B3F;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,14 +28,14 @@ body{
 
 .container{
     width: 400px;
-    background:rgba(255, 255, 255, .1);
+    background: white;
     position: relative;
-    color: #f6f8f9;
+    color: black;
     font-weight: 900;
     text-shadow: 0 0 50px #fff;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0,0, .3);
-
+    letter-spacing: 1px;
 }
 .container h2{
     text-align: center;
@@ -103,4 +102,10 @@ button{
 
 .form button{
     cursor: pointer;
+}
+
+.form button:hover{
+    background: white;
+    color: black;
+    transition: 1.6s;
 }
