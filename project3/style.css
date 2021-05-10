@@ -7,6 +7,7 @@
 }
 
 body{
+    background-color: #fffbdf;
     display: flex;
     flex-direction: column;
     font-family: 'Source Code Pro', monospace;
@@ -15,7 +16,9 @@ body{
     height: 100vh;
     margin: 0;
 }
-
+h1.text{
+    margin-bottom: 20px;
+}
 .screen{
     width: 60%;
     cursor: pointer;

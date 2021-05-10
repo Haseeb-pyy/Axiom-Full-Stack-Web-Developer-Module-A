@@ -3,21 +3,34 @@
     box-sizing: border-box;
 }
 body{
-    background: url(images/1.jpg);
+    background: url(images/nasa-Q1p7bh3SHj8-unsplash.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     padding: 0;
     min-height: 100vh;    
 }
+h1.text{
+        text-align: center;
+        margin-top: 25px;
+}
+ul{
+    margin-top: 25px;
 
-h2 a{
+}
+ul li{
+    margin-top: 20px;
+    padding: 10px 0;
+    list-style: none;
+    font-size: 25px;
+}
+ul li a{
     color: white;
-    margin-top: 200px;
+    list-style: none;
+    text-decoration: none;
 }
 
 .container{
