@@ -1,0 +1,7 @@
+Website for javascript:
+
+1) Traversy Media 
+
+2) Frank labortatory
+
+3) gsap (animation)
