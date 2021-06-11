@@ -5,24 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module A projects</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
         <h1 class="text">Module A projects</h1>
 
     <ul>
         
-        <li>
-            <a href="Project1/index.html">Project 1</a>
-        </li>
        
+<div data-aos="fade-right"  data-aos-duration="1000"  data-aos-delay="50">
+    <li> 
+    <a href="Project1/index.html">Project 1</a>
+</li>
+
+</div>
+
+
+<div data-aos="fade-right"  data-aos-duration="1000" data-aos-delay="150">
+
         <li>
             <a href="Project2/index.html">Project 2</a>
         </li>
-      
+       </div> 
+
+
+        <div data-aos="fade-right"  data-aos-duration="1000" data-aos-delay="250">
         <li>
             <a href="Project3/index.html">Project 3</a>
-        </li>
+        </li></div>
     </ul>
+    
 
     <!-- <div class="loading">
         <div class="parent-of-loading">
@@ -32,6 +45,10 @@
          </div>
         </div>
      </div> -->
+     <script>
+        AOS.init();
+      </script>
  <script src="script.js"></script>
+ 
 </body>
 </html>

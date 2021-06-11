@@ -1,16 +1,37 @@
-let numberCount = 0;
-let counter = setInterval(() => {
-    if(numberCount < 101){
-        const number = document.querySelector('.number');
-        const barline = document.querySelector('.barline');
-        number.textContent = `${numberCount}%`
-        barline.style.width = `${numberCount}%`; 
-        numberCount++;
-    }
-    else{
-        clearInterval(counter);
-        const loading = document.querySelector('.loading');
-        loading.classList.add('bhaag');
-    }
-     //niche jo 40 likha hai uska mtlb 5 seconds hai wahan time barha sakte hein
-}, 40)
+const container = document.querySelector('.container');
+const seats = document.querySelectorAll('.seat:not(.occupied)');
+const count = document.getElementById('count');
+const total = document.getElementById('total');
+
+let select = document.getElementById('select');
+
+
+
+
+// Event Listniers:
+// 1. Container
+function updateSeats(){
+     const wesi = document.querySelectorAll(.row .)
+}
+container.addEventListener('click', e =>{
+     if(e.target.classList.contains('seat') && !e.target.classList.contains('occupied')){
+          e.target.classList.toggle('selected');
+          updateSeats();
+     }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
