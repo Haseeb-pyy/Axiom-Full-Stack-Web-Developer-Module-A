@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hang-Man</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman</h1>
+        <p>Guess correct Word</p>
+    </div>
+
+    <div class="hangman-container">
+        <!--this is hand platform-->
+         <svg height="250" width="250" class="sketch">
+            <line x1="60" y1="20" x2="120" y2="20" />
+            <line x1="120" y1="20" x2="120" y2="50" />
+            <line x1="60" y1="20" x2="60" y2="220" />
+            <line x1="30" y1="220" x2="90" y2="220" />
+        <!--this is hang man-->
+        <!--this is hangman head-->
+        <circle cx="120" cy="70" r="20" />    
+        <!--this is hangman body-->    
+        <line x1="120" y1="90" x2="120" y2="160" />
+        <!--hang man Arms-->
+        <line x1="120" y1="110" x2="90" y2="140" />
+        <line x1="120" y1="110" x2="150" y2="140" />
+        <!--hangman legs-->
+        <line x1="120" y1="160" x2="90" y2="190" />
+        <line x1="120" y1="160" x2="150" y2="190" />
+
+         </svg>           
+        </div>
+    </div>
+
+
+
+
+
+<script src="script.js"></script>    
+</body>
+</html>

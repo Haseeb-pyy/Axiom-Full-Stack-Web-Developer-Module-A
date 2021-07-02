@@ -95,7 +95,7 @@ ul li a{
     }
 }
 
-@media (max-width:590px){
+@media (max-width:1000px){
     h1.text{
         color: white;
     }

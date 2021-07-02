@@ -1,0 +1,16 @@
+body{
+    box-sizing: border-box;
+    background-color: darkslategray;
+    color: white;
+}
+
+.container p{
+    font-size: 24px;
+}
+
+.sketch{
+    stroke: white;
+    fill: transparent;
+    stroke-width:5px;
+    stroke-linecap: round;
+}
