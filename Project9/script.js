@@ -20,14 +20,14 @@ let transactions = Transactions;
 // function to display transaction in DOM
 function displayTransaction(transaction){
     // calculate if transaction is credit or debit
-    const type = transaction.amount > 0 ?'+' : '-';
+    const type = transaction.amount > 0 ? '+' : '-';
     // create a list item for transaction
     const transactionLI = document.createElement('li');
     // Determine class based on transaction type. if positive then credit otherwise debit
     transactionLI.classList.add( transaction.amount > 0 ? 'credit' : 'debit');
     // assign inner HTML
     transactionLI.innerHTML = `
-        ${transaction.reason} <span>${type}${transaction.amount}</span>
+        ${transaction.reason} <span>${transaction.amount}</span>
          <button class="delete" onClick="deleteTransaction(${transaction.id})">x</button>
     `;
     //add the li in the DOM uner the transaction hitory li
