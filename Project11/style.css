@@ -23,7 +23,7 @@ body{
 }
 .filter{
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     
 }
 .post{
@@ -34,7 +34,7 @@ body{
     margin: 35px 0;
     width: 70vw;
     max-width: 800px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .post-content{

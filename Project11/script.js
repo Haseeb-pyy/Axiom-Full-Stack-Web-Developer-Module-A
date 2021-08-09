@@ -8,17 +8,15 @@ let limit = 5;
 let page = 1;
 
 async function fetchPost() {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&page=${page}`);
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`);
     const data = await res.json();
     return data;
 };
 
 async function renderPost() {
     const posts = await fetchPost();
-
     posts.forEach( post => {
         const postDiv = document.createElement('div');
-
         postDiv.classList.add('post');
 
         postDiv.innerHTML =  `
@@ -30,6 +28,7 @@ async function renderPost() {
         `;
         // Render in news feed container
         newsContaiter.appendChild(postDiv);
+      
     });
 
 };
@@ -39,18 +38,39 @@ function ShowLoader() {
     loader.classList.add('show');
     page++;
     renderPost()
-
-
     loader.classList.remove('show');
-    
+
 };
 
-window.addEventListener('scroll', ()=>{
-    const {scrollTop,ScrollHeight,clientHeight} = document.documentElement;
+function filterContent(e) {
+    const filter = e.target.value.toLowerCase();
+    const posts = document.querySelectorAll('.post');
+   
+    posts.forEach( post =>{
+        const title = post.querySelector(".post-title").innerText;
+        const body = post.querySelector(".post-body").innerText;
+        
+        if(title.indexOf(filter) >= 0 || body.indexOf(filter) >= 0){
+            post.style.display = 'flex';
+        }
+        else{
+            post.style.display = 'none';
 
-    if(scrollTop + clientHeight >= ScrollHeight - 1){
+        }
+    })
+};
+
+window.addEventListener('scroll', ()=> {
+    const {scrollTop,scrollHeight,clientHeight} = document.documentElement;
+    
+    if(scrollTop+clientHeight >= scrollHeight-1){
         ShowLoader();
+       
     };
-    console.log(scrollTop);
-});
+    
+});//
+
+filter.addEventListener('input',filterContent);
+
 renderPost();
+
