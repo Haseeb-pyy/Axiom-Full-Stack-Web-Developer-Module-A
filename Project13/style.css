@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@500&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: #f2f2f2;
+    font-family: 'STIX Two Text', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.btn{
+    font-size: 18px;
+    background: white;
+    color: black;
+    border: 1px solid #e2e2e2;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card-container{
+    prospective: 1000px;
+    position: relative;
+    height: 300px;
+    width: 500px;
+    max-width: 100%;
+}
+
+.card{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav{
+    display: flex;
+    margin: 10px 0;
+
+}
+
+.btn-nav{
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.nav p{
+    margin: 0 20px;
+}
+
+.add-card-container{
+    opacity: 0;
+    background: #f2f2f2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.add-card-container.active{
+    opacity: 0.5s;
+}
+
+label{
+    display: block;
+    margin: 20px 0 10px;
+    font-size: 18px;
+}
+
+textarea{
+    padding: 10px;
+    min-width: 500px;
+    max-width: 100%;
+}
+

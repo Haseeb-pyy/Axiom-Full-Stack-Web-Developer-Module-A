@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Memory Cards</title>
+</head>
+<body>
+    
+    <h1>Memory Cards 
+        <!-- button for Add card  -->
+        <button class="btn btn-small" id="add-card">
+            <i class="fas fa-plus"></i>
+        </button>
+        <button class="btn btn-small" id="remove-card">
+            <i class="fas fa-trash"></i>
+        </button>
+    </h1>
+
+    <!-- Container for Multiple cards -->
+    <div class="card-container" id="card-container">
+        <div class="card">
+            <div class="inside-card">
+                <div class="card-front">
+                    <p>Question</p>
+                </div>
+                <div class="card-back">
+                    <p>Answer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="inside-card">
+                <div class="card-front">
+                    <p>Question</p>
+                </div>
+                <div class="card-back">
+                    <p>Answer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <button class="btn-nav" id="previous-btn">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <p class="current-card" id="current-card">2</p>
+
+        <button class="btn-nav" id="next-btn">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <div class="add-card-container" id="add-card-container">
+        <h1>Add Card 
+            <button class="btn btn-small" id="cancel">
+                <i class="fas fa-times"></i>
+            </button>
+        </h1>
+
+        <div class="card-form-group">
+            <label for="question">Qusetion</label>
+            <textarea id="question" placeholder="Enter Question here" ></textarea>
+        </div>
+        <div class="card-form-group">
+            <label for="answer">Answer</label>
+            <textarea id="answer" placeholder="Enter Answer here" ></textarea>
+        </div>
+
+       <button class="btn" id="submit">Submit</button> 
+    </div>
+
+
+ <script src="script.js"></script>   
+</body>
+</html>
