@@ -1,0 +1,90 @@
+// Get Dom Elements:
+const main = document.getElementById('main');
+const addBtn = document.getElementById('add-user');
+const doubleBtn = document.getElementById('double');
+const filterBtn = document.getElementById('filter');
+const sortBtn = document.getElementById('sort');
+const sumBtn = document.getElementById('sum');
+
+let data = [];
+
+async function randomUser() {
+    const res =await fetch('https://randomuser.me/api/');
+    const data =await res.json();
+    //get the user data:
+    const user = data.results[0];
+    //create new user:
+    const newUser = {
+        name:`${user.name.title} ${user.name.first} ${user.name.last}`,
+        balance: Math.floor(Math.random()*100000)
+    }
+
+    addData(newUser);
+    
+}
+// function to push data in data Array
+function addData(newUser) {
+    data.push(newUser);
+    updateDom();
+}
+
+function updateDom(userData = data) {
+    //clear previous data:
+    main.innerHTML = ` <h2><strong>User</strong> Welth</h2>`
+
+    userData.forEach(user =>{
+        const userDiv = document.createElement('div');
+        
+        userDiv.classList.add('user');
+        userDiv.innerHTML = `<strong>${user.name}</strong> ${formatNumberToDollar(user.balance)}`
+        main.appendChild(userDiv);
+    })
+}
+
+function doubleMoney() {
+    console.log('old data',data);
+    //overwrite the data array by new data array
+    data = data.map(user=>{
+        return{...user,balance:user.balance*2}
+    })
+    updateDom();
+}
+
+function filterUser() {
+    data = data.filter(user=>user.balance >= 100000);
+    updateDom();
+}
+
+function sortbyBalance() {
+    data = data.sort((a,b)=> a.balance - b.balance);
+    updateDom();
+
+}
+
+function totalBalance() {
+    updateDom();
+
+    const balance = data.reduce((acc,user)=>(acc+=user.balance),0);
+    const balanceElement = document.createElement('div');
+    balanceElement.innerHTML = `<h3><strong>Total balance is:</strong> ${formatNumberToDollar(balance)}</h3>`;
+    main.appendChild(balanceElement);
+}
+// Function to format random number as money
+function formatNumberToDollar(number) {
+    return number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
+//Event Listners:
+//1:
+addBtn.addEventListener('click',randomUser);
+doubleBtn.addEventListener('click',doubleMoney);
+filterBtn.addEventListener('click',filterUser);
+sortBtn.addEventListener('click',sortbyBalance);
+sumBtn.addEventListener('click',totalBalance);
+
+
+
+
+
+randomUser();
+randomUser();
+randomUser();
