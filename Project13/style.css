@@ -13,6 +13,7 @@ body{
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .btn{
@@ -25,7 +26,7 @@ body{
 }
 
 .card-container{
-    prospective: 1000px;
+    perspective: 1000px;
     position: relative;
     height: 300px;
     width: 500px;
@@ -36,11 +37,76 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    font-size: 18px;
+    height: 100%;
+    width: 100%;
+    transform: translateX(50%) rotateY(-10deg);
+    transition: transform 0.5s ease,opacity 0.5s ease;
+}
+
+.card.left{
+    transform: translateX(50%) rotateY(10deg);
+
+}
+.card.right{
+    transform: translateX(-50%) rotateY(10deg);
+}
+
+.card.active{
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+    z-index: 10;
+}
+
+.card.show-answer .inside-card{
+    transform: rotateX(180deg);
+}
+
+.inside-card{
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.card-front, .card-back{
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.card-front{
+    transform: rotateX(0deg);
+}
+
+.card-back{
+    transform: rotateX(180deg);
+}
+
+.card-front::after, .card-back::after{
+    content: '\f021 Flip';
+    font-family: 'Font Awesome 5 Free', 'Open Sans', sans-serif;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #a2a2a2;
+    letter-spacing: 1px;
 }
 
 .nav{
     display: flex;
-    margin: 10px 0;
+    margin: 30px 0;
 
 }
 
@@ -69,10 +135,12 @@ body{
     display: flex;
     flex-direction: column;
     transition: 0.5s ease;
+    z-index: -1;
 }
 
 .add-card-container.active{
-    opacity: 0.5s;
+    opacity: 1;
+    z-index: 1;
 }
 
 label{
@@ -85,5 +153,8 @@ textarea{
     padding: 10px;
     min-width: 500px;
     max-width: 100%;
+    border: 1px solid #a2a2a2;
+    border-radius: 5px;
+    font-size: 18px;
 }
 
