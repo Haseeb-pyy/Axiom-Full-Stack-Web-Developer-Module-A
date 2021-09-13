@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --border-color: #e3e5e4;
+    --background-color: #c3c7ca;
+    --color: #34444f;
+}
+
+body{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'lato', sans-serif;
+}
+
+.dragable-list{
+    border: 1px solid var(--border-color);
+    list-style-type: none;
+    padding: 0;
+    color: var(--color);
+}
+
+.dragable-list li{
+    background-color: #fff;
+    display: flex;
+    flex: 1;
+}
+
+.dragable-list li:not(:last-of-type){
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dragable-list li .number{
+    display: flex;
+    height: 60px;
+    width: 60px;
+    background: var(--background-color);
+    justify-content: center;
+    align-items: center;
+}
+
+.dragable .person{
+    margin: 0 20px 0 0;
+}
+
+.dragable-list li.right .person{
+    color: #3ae374;
+}
+.dragable-list li.wrong .person{
+    color: red;
+}
+.dragable-list li.over .dragable{
+    background-color: #eaeaea;
+}
+
+
+
+.dragable{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.check-btn{
+    background: var(--background-color);
+    color: var(--color);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.check-btn:active{
+    transform: scale(0.93);
+}
+
+.check-btn:focus{
+    outline: none;
+}
